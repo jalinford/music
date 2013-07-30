@@ -2,7 +2,12 @@ Music::Application.routes.draw do
   
   root :to => 'main#index'
   match 'music', :to => "music#index"
+  match '/music/:title', :to => "music#music", as: 'piece'
   
+  resources :music do
+    resource :music
+  end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

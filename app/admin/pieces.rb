@@ -24,7 +24,7 @@ ActiveAdmin.register Piece do
 			a.input :audio_ogg
 			a.input :youtube, :hint => "use youtube embed full html"  
 			a.input :priority, :as => :select, :collection => 1..10
-			a.input :description, :as => :html_editor
+			a.input :description
 			a.input :_destroy, :as=>:boolean, :required => false, :label=>'Check this box to remove the above section when Piece updated'
 		end
 
